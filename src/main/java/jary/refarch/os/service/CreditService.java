@@ -3,12 +3,16 @@ package jary.refarch.os.service;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(serviceName = "creditservice", portName = "creditservice", name = "creditservice",
-        targetNamespace = "http://cs.bxms.ose/creditservice")
+@WebService
 public class CreditService {
 
     @WebMethod
-    public String sayHello() {
-        return "Hello World!";
+    public Integer getCreditScore(Integer ssn) {
+
+        int lastDigit = ssn - 10 * (ssn / 10);
+        int score = 600 + (lastDigit * 20);
+        System.out.println("For ssn " + ssn + ", will return credit score of " + score);
+
+        return score;
     }
 }

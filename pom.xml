@@ -28,9 +28,6 @@
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${version.war.plugin}</version>
-                <configuration>
-                    <webXml>WEB-INF/web.xml</webXml>
-                </configuration>
             </plugin>
         </plugins>
     </build>
